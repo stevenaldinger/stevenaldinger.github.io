@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Software Engineering Résumé</title>
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 32px;
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: #1e293b;
+      padding: 24px;
+      border-radius: 12px;
+      height: fit-content;
+    }
+
+    .sidebar h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .sidebar h2 {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #94a3b8;
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #94a3b8;
+      margin: 24px 0 12px;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 4px;
+    }
+
+    .contact p,
+    .online a,
+    .skills span,
+    .education p {
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .skills span {
+      display: inline-block;
+      background: #334155;
+      padding: 4px 8px;
+      border-radius: 6px;
+      margin: 3px;
+      font-size: 0.75rem;
+    }
+
+    /* Sidebar: Technologies (grouped) */
+    .technologies {
+      margin-top: 16px;
+    }
+
+    .technologies .tech-group {
+      margin-bottom: 14px;
+    }
+
+    .technologies .tech-group-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #cbd5e1; /* slightly brighter than section-title */
+      margin-bottom: 6px;
+    }
+
+    /* Simple bullet list */
+    .technologies .tech-list {
+      list-style: disc;
+      margin-left: 18px;
+    }
+    .technologies .tech-list li {
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+    }
+
+    /* Keep print behavior aligned with the rest */
+    @media print {
+      .technologies .tech-group-title {
+        color: black;
+      }
+      .technologies .tech-chips .chip {
+        background: #e5e7eb; /* light gray when printing */
+      }
+    }
+
+    /* Main content */
+    .main h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #f1f5f9;
+    }
+
+    .main .meta {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-bottom: 8px;
+    }
+
+    .main p {
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+    }
+
+    .main ul {
+      margin-left: 18px;
+      margin-bottom: 16px;
+    }
+
+    .main ul li {
+      margin-bottom: 6px;
+    }
+
+    /* Section spacing */
+    .main-section {
+      margin-bottom: 36px;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: white;
+        color: black;
+      }
+      .sidebar {
+        background: #f9fafb;
+        color: black;
+      }
+      a {
+        color: black;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h1>Steven Aldinger</h1>
+
+      <div class="contact">
+        <div class="section-title">Contact</div>
+        <p>(864) 621-3867</p>
+        <p>stevenaldinger@gmail.com</p>
+        <p>Denver, CO</p>
+      </div>
+
+      <div class="education">
+        <div class="section-title">Education</div>
+        <p><strong>B.S., Computer Science</strong><br />College of Charleston</p>
+        <p><strong>A.S., Electrical Engineering</strong><br />Trident Technical College</p>
+      </div>
+
+      <div class="online">
+        <div class="section-title">Socials</div>
+        <a href="https://www.linkedin.com/in/steven-aldinger-7a32a774/">linkedin.com/in/steven-aldinger-7a32a774</a>
+        <a href="https://medium.com/@stevenaldinger">medium.com/@stevenaldinger</a>
+        <a href="https://github.com/stevenaldinger">github.com/stevenaldinger</a>
+        <a href="https://hub.docker.com/r/stevenaldinger">hub.docker.com/r/stevenaldinger</a>
+      </div>
+
+      <div class="skills">
+        <div class="section-title">Core Skills</div>
+        <span>Distributed Systems</span>
+        <span>Kubernetes</span>
+        <span>Python</span>
+        <span>Go</span>
+        <span>NodeJS</span>
+        <span>Bash</span>
+        <span>CI/CD</span>
+        <span>Observability</span>
+        <span>Internal Tooling</span>
+      </div>
+
+      <div class="technologies">
+        <div class="section-title">Technologies</div>
+          <!-- Cloudflare -->
+          <div class="tech-group">
+            <div class="tech-group-title">Cloudflare</div>
+            <ul class="tech-list">
+              <li>DNS</li>
+              <li>CDN</li>
+              <li>WAF</li>
+              <li>Rate Limiting</li>
+            </ul>
+          </div>
+
+          <!-- Google Cloud Platform -->
+          <div class="tech-group">
+            <div class="tech-group-title">Google Cloud Platform</div>
+            <ul class="tech-list">
+              <li>Compute Engine</li>
+              <li>Kubernetes Engine</li>
+              <li>Cloud Functions</li>
+              <li>Cloud Run</li>
+              <li>Cloud Storage</li>
+              <li>Cloud SQL (MySQL & PostgreSQL)</li>
+              <li>BigQuery</li>
+              <li>Layer 4 & 7 Ingress</li>
+              <li>VPC Peering</li>
+              <li>API Gateway</li>
+              <li>PubSub</li>
+              <li>Identity-Aware Proxy</li>
+            </ul>
+          </div>
+
+          <!-- Datadog -->
+          <div class="tech-group">
+            <div class="tech-group-title">Datadog</div>
+            <ul class="tech-list">
+              <li>Dashboards</li>
+              <li>Notebooks</li>
+              <li>Monitoring</li>
+              <li>Alerting</li>
+              <li>SLOs</li>
+            </ul>
+          </div>
+
+          <!-- Atlassian -->
+          <div class="tech-group">
+            <div class="tech-group-title">Atlassian</div>
+            <ul class="tech-list">
+              <li>Jira</li>
+              <li>Confluence</li>
+            </ul>
+          </div>
+
+          <!-- DevOps -->
+          <div class="tech-group">
+            <div class="tech-group-title">DevOps</div>
+            <ul class="tech-list">
+              <li>Docker</li>
+              <li>Docker Compose</li>
+              <li>Kubernetes</li>
+              <li>Terraform</li>
+              <li>Ansible</li>
+              <li>Drone.io (CI/CD)</li>
+              <li>CodeShip (CI/CD)</li>
+              <li>GitHub Actions (CI/CD)</li>
+              <li>Spinnaker (CI/CD)</li>
+            </ul>
+          </div>
+
+          <!-- Back-end Infrastructure -->
+          <div class="tech-group">
+            <div class="tech-group-title">Back-end Infrastructure</div>
+            <ul class="tech-list">
+              <li>NGINX</li>
+              <li>LetsEncrypt</li>
+              <li>ProxySQL</li>
+              <li>Redis (sessions / caching / Machine Learning)</li>
+              <li>MySQL / PostgreSQL / MongoDB</li>
+              <li>Elastic Stack</li>
+              <li>Prometheus</li>
+              <li>Open Telemetry</li>
+              <li>gRPC</li>
+            </ul>
+          </div>
+
+          <!-- Front-end -->
+          <div class="tech-group">
+            <div class="tech-group-title">Front-end</div>
+            <ul class="tech-list">
+              <li>React</li>
+              <li>Redux</li>
+              <li>Progressive Web Apps</li>
+              <li>Webpack</li>
+              <li>SailsJS</li>
+              <li>gRPC</li>
+            </ul>
+          </div>
+
+          <!-- Generative AI -->
+          <div class="tech-group">
+            <div class="tech-group-title">Generative AI</div>
+            <ul class="tech-list">
+              <li>OpenAI / Gemini / Claude</li>
+              <li>LangChain</li>
+              <li>LangGraph</li>
+              <li>Cline / Claude Code</li>
+            </ul>
+          </div>
+
+          <!-- Languages -->
+          <div class="tech-group">
+            <div class="tech-group-title">Languages</div>
+            <ul class="tech-list">
+              <li>NodeJS</li>
+              <li>Python</li>
+              <li>Golang</li>
+              <li>Ruby</li>
+              <li>Bash</li>
+            </ul>
+          </div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <div class="main-section">
+        <div class="section-title">Professional Experience</div>
+
+        <h3>Staff Site Reliability Engineer — TeamSnap</h3>
+        <div class="meta">April 2023 — Present · Remote · Technical Lead: Platform Team</div>
+        <ul>
+          <li>Proposed and led the internal AI strategy and pilot groups.</li>
+          <li>Rearchitected our ProxySQL infrastructure to address scalability issues.</li>
+          <li>Involved in nearly all incident response and all pre/post-mortems.</li>
+          <li>Developed plan to pay down tech debt caused by &ldquo;keep the lights on&rdquo; mode during/post-COVID.</li>
+          <li>Rebuilt SRE &amp; Infrastructure team after COVID.</li>
+          <li>Introduced KEDA for more advanced autoscaling triggers.</li>
+          <li>Introduced cluster overprovisioning strategy to address quick-scalability issues with decade+ year old legacy ruby application.</li>
+          <li>Rewrote per-app helm charts as centralized chart with sane defaults.</li>
+          <li>Introduced vertical pod autoscaler recommendations for help with tuning deployments and cost-savings.</li>
+          <li>Enabled QA team to automate integration testing in production before serving customer traffic.</li>
+          <li>Enabled new data engineering team to automate deployment and monitoring of local, staging, and production pipelines.</li>
+          <li>Migrated legacy JSON key auth to GCP workload identity federation.</li>
+          <li>RFC&rsquo;s for migrating static site deployments off of Netlify, ProxySQL re-architecture, Kubernetes scalability issues, and deployment tuning.</li>
+        </ul>
+
+        <h3>Senior Site Reliability Engineer — TeamSnap</h3>
+        <div class="meta">March 2021 — April 2023 · Remote · Technical Lead: Infrastructure Team</div>
+        <ul>
+          <li>Single remaining SRE/infrastructure specialist after COVID furloughs slashed the team by over 50% and the remaining SREs moved to other companies. TeamSnap doubled in size, but infrastructure team was just me.</li>
+          <li>Established TeamSnap's Engineering blog.</li>
+          <li>Developed migration plan for Heroku -&gt; GCP for acquired company.</li>
+          <li>Support for Cloud Run deployments for our SecOps team.</li>
+          <li>Improved MySQL database migrations with throttling (Gh-ost) to avoid putting too much pressure on databases.</li>
+          <li>Established SLIs and baseline SLOs for highest priority applications.</li>
+          <li>Enabled QA team to automate integration testing in staging environments with GitHub action dispatch-triggered workflows and private GH actions runners within our VPC.</li>
+          <li>Decommissioned remaining VM workloads in favor of Kubernetes and storage buckets.</li>
+          <li>Worked with teams to develop load testing strategies for applications in new “production-readiness” procedure prior to deploying things into production environments.</li>
+          <li>Terraform support for Datadog monitors/alerting that led to instant dashboards/monitoring for new services at the same time the GitHub repo is created.</li>
+          <li>Worked with developers to add tracing to legacy applications.</li>
+          <li>Created Terraform modules to handle creation of GKE clusters and their layer 7 load balancing.</li>
+          <li>"Lunch &amp; Learns" for things like database schema migration automation, and writing reliable software (circuit breakers, startup/readiness/liveness checks).</li>
+          <li>Wrote documentation/procedures for making infrastructure changes like ProxySQL updates, Kubernetes upgrades, and general Kubernetes application debugging.</li>
+          <li>Ansible maintenance runbooks for things like managing TLS certificates and automating upgrades for Datadog agents, etc.</li>
+          <li>Split monolith application deployment into multiple deployments with ingress splitting to reduce single-point-of-failure outages.</li>
+          <li>Deployed Atlantis to remove need for infrastructure team in self-serve terraform deployments.</li>
+        </ul>
+
+        <h3>Site Reliability Engineer — TeamSnap</h3>
+        <div class="meta">December 2018 — March 2021 · Remote · Infrastructure Team</div>
+        <ul>
+          <li>Introduced and led adoption of Golang across engineering.</li>
+          <li>Created Golang CLI tool for automating tasks that is now used across the entire engineering organization.</li>
+          <li>Created a GCP auth + Vault integration for Golang, NodeJS, and Ruby to allow developers to easily fetch secrets from Vault for legacy, orchestrated, and serverless applications.</li>
+          <li>Participated in on-call rotation and identified observability gaps.</li>
+          <li>Worked with platform development team to migrate our entire infrastructure from RackSpace to Google Cloud.</li>
+          <li>Automated testing of database migrations.</li>
+          <li>Mentored and served as a technical escalation resource for other team members, especially around Docker, Kubernetes, and GCP.</li>
+          <li>Involved in cultivating engineering strategy by participating in technical board meetings and leading Golang and Kubernetes advocacy guilds within TeamSnap.</li>
+          <li>Discovered and fixed buggy application code around infrastructure connectivity (database/messaging queue).</li>
+          <li>Developed serverless application for auto-responding to Datadog alerts, including running arbitrary commands across all VM hosts.</li>
+          <li>Led development of on-demand staging environments with Terraform and Jenkins.</li>
+        </ul>
+
+        <h3>Software Engineer — AVOXI</h3>
+        <div class="meta">March 2016 — August 2018 · Charleston, SC · Technical & DevOps Lead: Engineering Team</div>
+        <ul>
+          <li>First engineering hire, working directly with the CTO.</li>
+          <li>Mentored JavaScript (front-end and back-end), Docker, Kubernetes, and Terraform as we grew the team.</li>
+          <li>Managed deployments for 10+ Kubernetes clusters across multiple projects in GKE.</li>
+          <li>Led original development of multiple customer facing applications (NodeJS, React, Redux, gRPC).</li>
+          <li>Maintained legacy PHP (Laravel) shopping cart application.</li>
+        </ul>
+
+        <h3>Software Engineer — Shadow-Soft</h3>
+        <div class="meta">May 2015 — May 2016 · Atlanta, GA · Engineering Team</div>
+        <ul>
+          <li>Designed and created bytecode instrumentation agent to inject dependencies into Java web applications.</li>
+          <li>Designed, created, and maintained custom PHP solutions to add features/maintain SugarCRM instance.</li>
+        </ul>
+
+        <h3>Windows Server Administrator / Technical Advisor — Carolina Speech and Language</h3>
+        <div class="meta">July 2010 — October 2011 · Summerville, SC</div>
+        <ul>
+          <li>Advised on all technology-related matters, like how to modernize communications while staying HIPAA compliant.</li>
+          <li>Led market analysis and made recommendations on business systems.</li>
+          <li>Consulted on general computer software (antivirus, antispyware).</li>
+          <li>Updated and administered corporate website and Windows server.</li>
+        </ul>
+      </div>
+
+      <div class="main-section">
+        <div class="section-title">Independent Experience — Notable Side Projects</div>
+        <h3>imUp.io: Co-Founder / "CTO" (approved side project by TeamSnap)</h3>
+        <p>Internet uptime monitoring for individuals, families, and businesses.</p>
+        <p>Biggest customer was Splash Damage, gaming company who created multiple Gears of War games, Halo: MCC, and Star Wars: Hunters.</p>
+
+        <h3>Mice Race: Full Stack Developer</h3>
+        <p>Crypto gambling app with live-streamed gerbil racing and live community chat.</p>
+        <a href="https://medium.com/@rosidahtulmahmudah/micerace-com-is-the-only-mouse-racing-gambling-platform-in-the-world-e7d7f14059ae" target="_blank" rel="noopener noreferrer">Article: Micerace.com is the only mouse racing gambling platform in the world</a>
+
+        <h3>Algorithmic Trading Platform for Crypto: Solo Project</h3>
+        <p>Algorithmic trading platform integrating with many crypto exchanges, including strategies for things like arbitrage trading.</p>
+
+        <h3>Algorithmic Trading Platform for Stock Options: Solo Project</h3>
+        <p>Algorithmic trading platform using TastyTrade, including a library of technical indicators.</p>
+      </div>
+
+      <div class="main-section">
+        <div class="section-title">Blog Articles</div>
+        <ul>
+          <li><a href="https://medium.com/teamsnap-engineering/streamlining-terraform-at-teamsnap-37f7e4d5dec8">Streamlining Terraform at TeamSnap — April 2022</a></li>
+          <li><a href="https://medium.com/imup-io/increasing-reliability-and-cost-savings-with-preemptible-kubernetes-nodes-and-chaos-81b0a8d4c648">Increasing Reliability and Cost Savings with Preemptible Kubernetes Nodes and Chaos — May 2022</a></li>
+          <li><a href="https://medium.com/teamsnap-engineering/load-testing-a-service-with-20-000-requests-per-second-with-locust-helm-and-kustomize-ea9bea02ae28">Load Testing a Service with ~20,000 Requests per Second with Locust, Helm, and Kustomize (was turned into a product by Armory.io) — August 2022</a></li>
+          <li><a href="https://medium.com/teamsnap-engineering/properly-running-kubernetes-jobs-with-sidecars-ddc04685d0dc">Properly Running Kubernetes Jobs with Sidecars — November 2022</a></li>
+          <li><a href="https://medium.com/teamsnap-engineering/practical-applications-of-generative-ai-f23c5d0a4088">Practical Applications of Generative AI — December 2023</a></li>
+          <li><a href="https://medium.com/teamsnap-engineering/vertex-ai-and-bigquery-for-natural-language-exploration-of-gcp-billing-data-7f96b13c7a7e">Vertex AI and BigQuery for Natural Language Exploration of GCP Billing Data — January 2024</a></li>
+          <li><a href="https://medium.com/teamsnap-engineering/accessing-aws-resources-from-google-kubernetes-engine-3df21a8ca297">Accessing AWS Resources from Google Kubernetes Engine — February 2024</a></li>
+          <li><a href="https://medium.com/teamsnap-engineering/properly-running-kubernetes-jobs-with-sidecars-in-2024-k8s-1-28-ad9b51d17d50">Properly Running Kubernetes Jobs with Sidecars in 2024 (K8s 1.28+) — March 2024</a></li>
+        </ul>
+      </div>
+
+      <div class="main-section">
+        <div class="section-title">Open Source Contributions</div>
+        <ul>
+          <li><strong>opencybersecurityalliance/kestrel-as-a-service (Docker)</strong> — Cleaned up Dockerfile and Patched Security Vulnerability — <a href="https://github.com/opencybersecurityalliance/kestrel-as-a-service/pull/32">opencybersecurityalliance/kestrel-as-a-service/pull/32</a></li>
+          <li><strong>livekit/livekit-helm (Helm)</strong> — Fixed TCP port in example values — <a href="https://github.com/livekit/livekit-helm/pull/61">livekit/livekit-helm/pull/61</a></li>
+          <li><strong>strongdm/charts (Helm)</strong> — Added support for loadBalancerIP config in relay gateway service — <a href="https://github.com/strongdm/charts/pull/2">strongdm/charts/pull/2</a></li>
+          <li><strong>stevenaldinger/k8s-gogs (Kubernetes)</strong> — Author - Gogs deployment with PostgresQL on Kubernetes — <a href="https://github.com/stevenaldinger/k8s-gogs">stevenaldinger/k8s-gogs</a></li>
+          <li><strong>stevenaldinger/k8s-drone (Kubernetes)</strong> — Author Drone server and agent Kubernetes deployment — <a href="https://github.com/stevenaldinger/k8s-drone">stevenaldinger/k8s-drone</a></li>
+          <li><strong>stevenaldinger/gke-glusterfs-heketi (Bash, Kubernetes)</strong> — Author Automated GlusterFS + Heketi for GKE — <a href="https://github.com/stevenaldinger/gke-glusterfs-heketi">stevenaldinger/gke-glusterfs-heketi</a></li>
+          <li><strong>Redis Commander (JavaScript)</strong> — Added Base64 support and Encode/Decode buttons in UI — <a href="https://github.com/joeferner/redis-commander/pull/205">joeferner/redis-commander/pull/205</a></li>
+          <li><strong>Redis Commander (JavaScript)</strong> — Added configuration via environment variables — <a href="https://github.com/joeferner/redis-commander/pull/206">joeferner/redis-commander/pull/206</a></li>
+          <li><strong>Redis Commander (JavaScript)</strong> — Added Dockerfile and automated builds on DockerHub — <a href="https://github.com/joeferner/redis-commander/pull/207">joeferner/redis-commander/pull/207</a></li>
+          <li><strong>Redis Commander (JavaScript)</strong> — Added example Kubernetes deployments — <a href="https://github.com/joeferner/redis-commander/pull/209">joeferner/redis-commander/pull/209</a></li>
+          <li><strong>GiantSwarm/Prometheus (Kubernetes)</strong> — Support Kubernetes &lt;= 1.9.6 — <a href="https://github.com/giantswarm/prometheus/pull/97">giantswarm/prometheus/pull/97</a></li>
+          <li><strong>Terraform Provider Helm (Golang)</strong> — Added support for set-string command — <a href="https://github.com/hashicorp/terraform-provider-helm/pull/74">hashicorp/terraform-provider-helm/pull/74</a></li>
+          <li><strong>Terraform Provider GoDaddy (Golang)</strong> — Added support for MX records — <a href="https://github.com/n3integration/terraform-provider-godaddy/pull/22">n3integration/terraform-provider-godaddy/pull/22</a></li>
+          <li><strong>NullArray/AutoSploit (Docker/Pip)</strong> — Updated dependencies — <a href="https://github.com/NullArray/AutoSploit/pull/269">NullArray/AutoSploit/pull/269</a></li>
+          <li><strong>threat9/routersploit (Python)</strong> — Support noninteractive mode — <a href="https://github.com/threat9/routersploit/pull/556">threat9/routersploit/pull/556</a></li>
+          <li><strong>stevenaldinger/decker (Golang)</strong> — Author - (Most popular project) Declarative penetration testing orchestration framework — <a href="https://github.com/stevenaldinger/decker">stevenaldinger/decker</a></li>
+          <li><strong>stevenaldinger/Evil-AP-golang (Golang)</strong> — Author - Evil WiFi Access point in Golang — <a href="https://github.com/stevenaldinger/Evil-AP-golang">stevenaldinger/Evil-AP-golang</a></li>
+          <li><strong>achael/eht-imaging (Dockerfile/Pip, First image of black hole)</strong> — Added Dockerfile and pip requirements file— <a href="https://github.com/achael/eht-imaging/pull/93">achael/eht-imaging/pull/93</a></li>
+          <li><strong>teamsnap/vault-key (Golang/NodeJS/Ruby/C/Kubernetes/Terraform/Docker)</strong> — Author - Easy Vault integration with GCP for Golang, NodeJS, and Ruby — <a href="https://github.com/teamsnap/vault-key">teamsnap/vault-key</a></li>
+          <li><strong>CM2Walki/CSGO</strong> — Fixed pushd/popd bug — <a href="https://github.com/CM2Walki/CSGO/pull/8">CM2Walki/CSGO/pull/8</a></li>
+          <li><strong>spinnaker/sponnet</strong> — Fixed pipeline demo — <a href="https://github.com/spinnaker/sponnet/pull/14">spinnaker/sponnet/pull/14</a></li>
+          <li><strong>sethvargo/vault-on-gke (Terraform)</strong> — Fixed unexpected argument load_config_file and unsupported block type requests errors — <a href="https://github.com/sethvargo/vault-on-gke/pull/93">sethvargo/vault-on-gke/pull/93</a></li>
+          <li><strong>sacOO7/socketcluster-client-go (Golang)</strong> — Fixed panic during interface conversion — <a href="https://github.com/sacOO7/socketcluster-client-go/pull/15">sacOO7/socketcluster-client-go/pull/15</a></li>
+          <li><strong>questdb/questdb-kubernetes (Helm)</strong> — Added ability to specify additional sidecars — <a href="https://github.com/questdb/questdb-kubernetes/pull/111">questdb/questdb-kubernetes/pull/111</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
